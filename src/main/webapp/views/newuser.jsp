@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="padding: 5%">
 	
 	<div id="wrap
 		per">
@@ -37,17 +37,18 @@
 					<td>User Name:</td>
 					<td><form:input path="userName" /></td>
 				</tr>
+				
 				<tr>
 					<td>Password:</td>
 					<td><form:input path="password" /></td>
 				</tr>
 				<tr>
-					<td>role:</td>
+					<td>Role:</td>
 					<td><form:input path="roles" /></td>
 				</tr>
 
-				<tr>
-					<td colspan="2"><input type="submit" value="Save Changes" />
+				<tr  ">
+					<td style="padding-top: 20px;" colspan="2"><input type="submit" value="Save Changes" />
 					</td>
 				</tr>
 			</table>

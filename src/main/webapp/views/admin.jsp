@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body style="padding: 5%">
 
 
 
@@ -44,6 +44,14 @@
 			<c:forEach var="task" items="${tasks}">
 
 
+				<c:url var="updatelink" value="/updatetask">
+					<c:param name="taskId" value="${task.id}" />
+				</c:url>
+				<c:url var="deletelink" value="/deletetask">
+					<c:param name="taskId" value="${task.id}" />
+				</c:url>
+
+
 				<tr>
 					<td>${task.getTaksName()}</td>
 					<td>${task.getSdate()}</td>
@@ -52,9 +60,10 @@
 					<td>${task.getEmail()}</td>
 					<td>${task.getSeverity()}</td>
 					<td>${task.getUser().getUserName()}</td>
-					
-					<td><a href="${updatelink }">update</a> | <a href="${updatelink }">delete</a></td>
-					
+
+					<td><a href="${updatelink }">Update</a> | 
+					<a href="${deletelink }" onclick="if (!(confirm('Are you sure you want to delete this task ?'))) return false">Delete</a></td>
+
 
 				</tr>
 
@@ -65,8 +74,8 @@
 		<div>
 
 
-			<button type="button" onclick="window.location.href='newuserform'">New
-				Customer</button>
+				<button type="button" onclick="window.location.href='createTask'">New
+				Task</button>
 
 
 		</div>

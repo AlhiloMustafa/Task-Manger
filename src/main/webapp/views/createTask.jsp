@@ -13,11 +13,11 @@
 	crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="padding: 5%">
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>New User Registration Form :</h2>
+			<h2>Create / Update a Task:</h2>
 
 
 		</div>
@@ -27,11 +27,10 @@
 	<div id="container">
 		<h3></h3>
 
-		<form:form action="newtask" modelAttribute="task"
-			method="POST">
+		<form:form action="newtask" modelAttribute="task" method="POST">
 			<table>
-			<form:hidden path="id"/>
-			
+				<form:hidden path="id" />
+
 				<tr>
 					<td>First Name:</td>
 					<td><form:input path="taksName" /></td>
@@ -56,10 +55,14 @@
 					<td>user:</td>
 					<td><form:input path="user" /></td>
 				</tr>
-				
+
 				<tr>
 					<td>severity:</td>
-					<td><form:input path="severity" /></td>
+
+					<td><form:select path="severity">
+							<form:option value="NONE" label="Select" />
+							<form:options items="${severityList}" />
+						</form:select></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="Save Changes" />
